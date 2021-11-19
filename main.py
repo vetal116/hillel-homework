@@ -23,20 +23,24 @@ print(url_1 == url_2)
 
 class HttpsUrl(Url):
     def __init__(self, scheme='https', authority=None, path=None, query=None, fragment=None):
+        super().__init__(scheme, authority, path, query, fragment)
         self.scheme = scheme
         self.authority = authority
         self.path = path
         self.query = query
         self.fragment = fragment
+        self.scheme = 'http'
 
 
 class HttpUrl(Url):
     def __init__(self, scheme='http', authority=None, path=None, query=None, fragment=None):
+        super().__init__(scheme, authority, path, query, fragment)
         self.scheme = scheme
         self.authority = authority
         self.path = path
         self.query = query
         self.fragment = fragment
+        self.scheme = 'http'
 
 
 class GoogleUrl(HttpsUrl):
